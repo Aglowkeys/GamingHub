@@ -28,6 +28,9 @@ In order to pay using Mercadopago you will need the following (fake) credit card
 <pre>Number: 5031 7557 3453 0604
 Security code: 123
 Expiration date: 11/25</pre>
+In order to pay using Paypal you will need the following information:
+<pre>Username: sb-yt1vy4696932@personal.example.com
+password: asdasd123</pre>
 
 
 ## 💬 What's your contact info?
