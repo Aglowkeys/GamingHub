@@ -37,5 +37,5 @@ Or send me a message on LinkedIn: https://www.linkedin.com/in/emiliano-alfonso/
 You can also find the other members of the project here:
 - <a href="https://portfolio-franco-fiori.vercel.app/">Franco Fiori</a>
 - <a href="https://pakvothe.github.io/portfolio/">Franco Ortiz</a>
-- <a href="https://nc-devw.github.io/">Ignacio Contreras</a>
+- <a href="https://nc-devw.github.io/portfolio/">Ignacio Contreras</a>
 - <a href="https://github.com/tinsanchez00/">Martín Sánchez</a>
