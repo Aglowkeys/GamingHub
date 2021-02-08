@@ -1,0 +1,462 @@
+:root {
+	--clr-primary: #9b5df7;
+	--clr-primary-2: #763FC7;
+	--clr-secondary: #5630E4;
+	--clr-secondary-2: #4424B9;
+	--clr-secondary-3: #5a50f0;
+	--clr-white: #F5F4F8;
+	--clr-middle: #7E7E7E;
+	--clr-middle-2: #EEE;
+	--clr-dark: #1B1A1F;
+	--clr-dark-1: #2C2F31;
+	--clr-dark-2: #35383a;
+	--clr-warning: #F6DB2D;
+	--clr-warning-2: #e4ab41;
+	--clr-error: #D53051;
+	--clr-error-2: #972038;
+	--clr-success: #97DA3F;
+	--clr-success-2: #79b139;
+	--clr-success-3: #a9e45d;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--clr-primary);
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--clr-primary-2);
+}
+
+::selection {
+	background-color: var(--clr-primary);
+	color: var(--clr-white);
+}
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+	font-family: Poppins, sans-serif;
+	line-height: 1;
+	font-weight: 900;
+	letter-spacing: 0.02em;
+}
+
+h2 { line-height: 1.3 }
+
+.main-container>h2 {
+	text-align: center;
+	margin-bottom: 1em;
+	font-size: 2em;
+}
+
+.main-container>svg {
+	display: block;
+	margin: 0 auto 2em;
+}
+
+input {
+	filter: none;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+	transition: background-color 1s ease-in-out;
+	transition-delay: 5000s;
+}
+
+body {
+	font-family: Raleway, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#cartModal {
+	z-index: 99;
+	position: relative;
+}
+
+.skinny-title {
+	font-weight: 500;
+	text-transform: uppercase;
+}
+.w-100 { width: 100% }
+.d-none { display: none }
+.d-block { display: block }
+.mt-1 { margin-top: 1em }
+.mt-2 { margin-top: 2em }
+.mr-1 { margin-right: 1em }
+.mr-2 { margin-right: 2em }
+.mb-1 { margin-bottom: 1em }
+.mb-2 { margin-bottom: 2em }
+.pointer { cursor: pointer }
+.text-center { text-align: center }
+.relative { position: relative }
+
+.main-container {
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2em 0 3em;
+	position: relative;
+}
+
+.main-title {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.admin-main-container {
+	margin-left: 300px;
+	padding: 2em 3em;
+}
+
+@media (max-width: 800px) {
+	.admin-main-container { margin-left: 50px }
+}
+
+.label-select {
+	margin-bottom: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.admin-h1 {
+	text-transform: uppercase;
+	font-size: 2em;
+	font-weight: 700;
+	color: var(--clr-primary-2);
+	padding-bottom: .5em;
+	margin-bottom: .7em;
+	border-bottom: 1px solid #CCC;
+}
+
+.wrapper {
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.button__top {
+	pointer-events: none;
+	opacity: 0;
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	border: 0;
+	padding: 1em;
+	background: var(--clr-primary-2);
+	color: var(--clr-white);
+	z-index: 80;
+	transition: opacity .2s ease;
+	border-radius: 999em;
+	cursor: pointer;
+}
+
+.button__top:hover { background: var(--clr-primary) }
+
+.button__top svg {
+	fill: var(--clr-white);
+	width: 30px;
+	height: 30px;
+}
+
+.quantitytext {
+	min-width: 1.4em;
+	display: inline-block;
+	text-align: center;
+}
+
+.star-container svg {
+	stroke: rgba(0, 0, 0, 0.2);
+	stroke-width: 2px;
+}
+
+.partyBar-container {
+	overflow: hidden;
+	width: 100%;
+	height: 7px;
+	position: absolute;
+	bottom: 0;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	transition: transform .6s ease;
+}
+
+.partyBar-container.showBar {
+	transform: scaleY(1);
+}
+
+.partyBar {
+	height: 100%;
+	background-color: transparent;
+	background: linear-gradient(90deg, rgba(209,13,13,1) 0%, rgba(209,180,46,1) 13%, rgba(33,157,193,1) 50%, rgba(194,63,186,1) 87%, rgba(209,13,13,1) 100%); 	width: 4000%;
+	animation: party 6s infinite;
+}
+
+
+@keyframes party {
+	0% {
+		transform: translateX(0)
+	}
+
+	100% {
+		transform: translateX(-97.5%)
+	}
+}
+
+
+.small-text {
+	text-align: center;
+	font-size: 0.8em;
+	margin-top: 2em;
+	padding-top: 2em;
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.small-text.small-spacing {
+	margin-top: 1em;
+	padding-top: 1em;
+}
+
+.small-text.small-warning {
+	position: relative;
+	padding-left: 3em;
+	text-align: left;
+	border-color: var(--clr-error-2);
+}
+
+.small-text.small-warning::before {
+	content: '\f06a';
+	font-family: 'Font Awesome 5 Pro';
+	color: var(--clr-error);
+	position: absolute;
+	left: 1em;
+}
+
+/*
+
+---------- Sweet Alert 2 -----------
+Algunas cosas tienen más especificidad de la deseada,
+así que para customizar las alertas a veces hay que
+ser más específicos con los selectores.
+
+*/
+
+div.swal2-container.swal2-backdrop-show {
+	background: rgba(0, 0, 0, .4);
+}
+
+div.swal2-popup {
+	background-color: var(--clr-white);
+	border-radius: 1em;
+	border: 5px solid var(--clr-primary);
+	box-shadow: 0 0 50px rgba(0, 0, 0, .2);
+	font-size: 0.85em;
+	padding: 0;
+}
+
+div.swal2-header {
+	padding: 1.5em 1.5em 0;
+}
+
+div.swal2-content {
+	padding: 0 1.5em;
+}
+
+h2.swal2-title {
+	color: var(--clr-dark);
+	font-weight: 900;
+	margin-bottom: .25em;
+}
+
+div.swal2-actions {
+	margin-top: 1.5em;
+	border-top: 1px solid #DDD;
+	padding: 1.5em;
+}
+
+div.swal2-actions button.swal2-styled {
+	font-weight: 700;
+	border: 3px solid;
+	border-radius: 10em;
+	padding: .7em 1.2em;
+	transition: transform 25ms ease, box-shadow 25ms ease;
+	min-width: 100px;
+	cursor: pointer;
+	font-size: 1em;
+	letter-spacing: 0.03em;
+	transition: background-color .3s ease, transform .1s ease;
+	box-shadow: 3px 3px 0px rgba(0, 0, 0, .1);
+}
+
+div.swal2-actions button.swal2-styled:active {
+	transform: translate(3px, 3px);
+	box-shadow: none;
+}
+
+button.swal2-confirm {
+	background: transparent !important;
+	border-color: var(--clr-secondary-3) !important;
+	color: var(--clr-secondary-3) !important;
+}
+
+button.swal2-confirm:hover, button.swal2-confirm:focus {
+	background-color: var(--clr-secondary-3) !important;
+	color: var(--clr-white) !important;
+}
+
+button.swal2-cancel {
+	background: transparent !important;
+	border-color: var(--clr-error) !important;
+	color: var(--clr-error) !important;
+}
+
+button.swal2-cancel:hover, button.swal2-cancel:focus {
+	background-color: var(--clr-error) !important;
+	color: var(--clr-white) !important;
+}
+
+div.swal2-icon {
+	font-family: Poppins, sans-serif;
+	font-weight: 700;
+}
+
+div.swal2-icon.swal2-warning, div.swal2-icon.swal2-error {
+	color: var(--clr-error);
+	border-color: var(--clr-error);
+}
+
+.swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+	background-color: var(--clr-error) !important
+}
+
+div.swal2-icon.swal2-info {
+	color: var(--clr-secondary-3);
+	border-color: var(--clr-secondary-3);
+}
+
+div.swal2-icon.swal2-success, div.swal2-icon div.swal2-success-ring {
+	color: var(--clr-success);
+	border-color: var(--clr-success) !important;
+}
+
+div.swal2-icon.swal2-question {
+	color: var(--clr-primary);
+	border-color: var(--clr-primary);
+}
+
+
+
+
+/*
+
+---------- Toast Notifications -----------
+Algunas cosas tienen más especificidad de la deseada,
+así que para customizar las notificaciones a veces hay que
+ser más específicos con los selectores.
+
+*/
+
+.react-toast-notifications__container {
+	width: 20em;
+	overflow: visible !important;
+}
+
+.react-toast-notifications__container > div {
+	width: 100%;
+	height: 100% !important;
+}
+
+.react-toast-notifications__toast {
+	width: 100% !important;
+	height: 100%;
+	box-shadow: 0 5px 15px -10px rgba(0,0,0,0.7) !important;
+}
+
+.react-toast-notifications__toast__content {
+	font-family: Poppins, Raleway, Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	font-size: 1em !important;
+	padding: 1em !important;
+}
+
+.react-toast-notifications__toast__icon-wrapper {
+	padding: 1em;
+	width: 3em !important;
+	overflow: visible !important;
+}
+
+.react-toast-notifications__toast__icon {
+	top: 0.5em;
+}
+
+
+/* ----- COLORES SUCCESS ----- */
+.react-toast-notifications__toast--success {
+	color: var(--clr-dark) !important;
+	background-color: var(--clr-success) !important;
+}
+
+.react-toast-notifications__toast--success .react-toast-notifications__toast__icon-wrapper {
+	background-color: var(--clr-success-2) !important;
+}
+
+
+/* ----- COLORES ERROR ----- */
+.react-toast-notifications__toast--error {
+	color: var(--clr-white) !important;
+	background-color: var(--clr-error) !important;
+}
+
+.react-toast-notifications__toast--error .react-toast-notifications__toast__icon-wrapper {
+	background-color: var(--clr-error-2) !important;
+}
+
+
+/* ----- COLORES WARNING ----- */
+.react-toast-notifications__toast--warning {
+	color: var(--clr-dark) !important;
+	background-color: var(--clr-warning) !important;
+}
+
+.react-toast-notifications__toast--warning .react-toast-notifications__toast__icon-wrapper {
+	background-color: var(--clr-warning-2) !important;
+}
+
+
+/* ----- COLORES INFO ----- */
+.react-toast-notifications__toast--info {
+	color: var(--clr-white) !important;
+	background-color: var(--clr-secondary) !important;
+}
+
+.react-toast-notifications__toast--info .react-toast-notifications__toast__icon-wrapper {
+	background-color: var(--clr-secondary-2) !important;
+}
